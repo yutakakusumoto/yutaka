@@ -1,0 +1,88 @@
+table m_customer2
+	lineageTag: 86a6e44f-e46d-4342-a50e-6c8e9c98eaa3
+
+	column CD_CUSTOMER_SITE_JOIN_KEY
+		dataType: string
+		lineageTag: ee2f7650-a94e-4d62-b3a0-fc56a2462a7e
+		summarizeBy: none
+		sourceColumn: CD_CUSTOMER_SITE_JOIN_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CORP
+		dataType: string
+		lineageTag: 2eb2f9c0-f965-41ae-8ade-241e2f99de65
+		summarizeBy: none
+		sourceColumn: CD_CORP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_GCOM
+		dataType: string
+		lineageTag: 42c451d6-11d7-4b4e-ab52-4cf97edc8e7c
+		summarizeBy: none
+		sourceColumn: CD_GCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CUSTOMER_SITE
+		dataType: string
+		lineageTag: 46b687e9-6f3b-4fab-820e-b1e443aa677f
+		summarizeBy: none
+		sourceColumn: CD_CUSTOMER_SITE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SUPERVISION_GCOM
+		dataType: string
+		lineageTag: 1ba43ba5-256e-4521-bef1-e37de7c288f2
+		summarizeBy: none
+		sourceColumn: CD_SUPERVISION_GCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CUSTOMER_SITE1
+		dataType: string
+		lineageTag: 9d72e74b-9e6f-41a1-ae49-35582b88f3d7
+		summarizeBy: none
+		sourceColumn: NM_CUSTOMER_SITE1
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CUSTOMER_SITE2
+		dataType: string
+		lineageTag: 80b85bed-facc-4bf3-8be2-542cb0ff8d06
+		summarizeBy: none
+		sourceColumn: NM_CUSTOMER_SITE2
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CUSTOMER_SITE3
+		dataType: string
+		lineageTag: 9a6ff72e-1809-4245-871e-48c31b4f774e
+		summarizeBy: none
+		sourceColumn: NM_CUSTOMER_SITE3
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTIVE_FLAG
+		dataType: string
+		lineageTag: 7fe2869b-00e6-487f-bfcc-012f0e072588
+		summarizeBy: none
+		sourceColumn: ACTIVE_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	partition m_customer2 = m
+		mode: import
+		source =
+				let
+				    ソース = Databricks.Catalogs("adb-1132083480321809.9.azuredatabricks.net", "/sql/1.0/warehouses/a0fb4be618eab248", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    nectecdmo_catalog_Database = ソース{[Name="nectecdmo_catalog",Kind="Database"]}[Data],
+				    nectecdmo_schema_Schema = nectecdmo_catalog_Database{[Name="nectecdmo_schema",Kind="Schema"]}[Data],
+				    m_customer2_Table = nectecdmo_schema_Schema{[Name="m_customer2",Kind="Table"]}[Data]
+				in
+				    m_customer2_Table
+
+	annotation PBI_ResultType = Table
+
