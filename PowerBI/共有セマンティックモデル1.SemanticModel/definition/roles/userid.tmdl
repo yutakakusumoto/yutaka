@@ -1,0 +1,7 @@
+role userid
+	modelPermission: read
+
+	tablePermission user_master = [USERID] = userprincipalname()
+
+	annotation PBI_Id = 64667bb8fa8443319487bb87be45a4d5
+

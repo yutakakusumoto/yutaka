@@ -1,0 +1,72 @@
+table user_master
+	lineageTag: bfee52e9-7b04-47c9-9dbd-e2a65965c153
+
+	column USERID
+		dataType: string
+		lineageTag: dd3b3d79-aba6-4bb6-8e5b-a2250d54d268
+		summarizeBy: none
+		sourceColumn: USERID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_GCOM
+		dataType: string
+		lineageTag: 5ef36c08-7a06-42d9-9d36-dd3bfab2ca65
+		summarizeBy: none
+		sourceColumn: CD_GCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORGANIZATION1_CD
+		dataType: string
+		lineageTag: b81c57f4-d97c-4b94-b4ff-440c2be37400
+		summarizeBy: none
+		sourceColumn: ORGANIZATION1_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORGANIZATION2_CD
+		dataType: string
+		lineageTag: 2cb4066d-3473-4cf1-9391-d291c4f56b66
+		summarizeBy: none
+		sourceColumn: ORGANIZATION2_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORGANIZATION3_CD
+		dataType: string
+		lineageTag: c92ac051-4f37-49f1-bed0-6ae91bbc1846
+		summarizeBy: none
+		sourceColumn: ORGANIZATION3_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column APP_ROLL
+		dataType: string
+		lineageTag: ebb3a227-a385-442e-8c84-03e2c46ce0fb
+		summarizeBy: none
+		sourceColumn: APP_ROLL
+
+		annotation SummarizationSetBy = Automatic
+
+	column USER_NAME
+		dataType: string
+		lineageTag: a6613709-5e1f-41e7-b62f-c3474f5e7ffc
+		summarizeBy: none
+		sourceColumn: USER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition user_master = m
+		mode: import
+		source =
+				let
+				    ソース = Databricks.Catalogs("adb-1132083480321809.9.azuredatabricks.net", "/sql/1.0/warehouses/ca711c27fc677da8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    nectecdmo_catalog_Database = ソース{[Name="nectecdmo_catalog",Kind="Database"]}[Data],
+				    sales_schema_Schema = nectecdmo_catalog_Database{[Name="sales_schema",Kind="Schema"]}[Data],
+				    user_master_Table = sales_schema_Schema{[Name="user_master",Kind="Table"]}[Data]
+				in
+				    user_master_Table
+
+	annotation PBI_ResultType = Table
+

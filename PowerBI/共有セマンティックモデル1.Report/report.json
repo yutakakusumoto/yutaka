@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "ページ 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8fc1b8c0dbf8589a4dd1",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"73462b8e45bdb50f2b5c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":91.42857142857143,\"y\":110.12987012987013,\"z\":1,\"width\":1076.3636363636363,\"height\":280.5194805194805,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"user_master.APP_ROLL\"},{\"queryRef\":\"user_master.CD_GCOM\"},{\"queryRef\":\"user_master.ORGANIZATION1_CD\"},{\"queryRef\":\"user_master.ORGANIZATION2_CD\"},{\"queryRef\":\"user_master.ORGANIZATION3_CD\"},{\"queryRef\":\"user_master.USER_NAME\"},{\"queryRef\":\"user_master.USERID\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"user_master\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"APP_ROLL\"},\"Name\":\"user_master.APP_ROLL\",\"NativeReferenceName\":\"APP_ROLL\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"CD_GCOM\"},\"Name\":\"user_master.CD_GCOM\",\"NativeReferenceName\":\"CD_GCOM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"ORGANIZATION1_CD\"},\"Name\":\"user_master.ORGANIZATION1_CD\",\"NativeReferenceName\":\"ORGANIZATION1_CD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"ORGANIZATION2_CD\"},\"Name\":\"user_master.ORGANIZATION2_CD\",\"NativeReferenceName\":\"ORGANIZATION2_CD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"ORGANIZATION3_CD\"},\"Name\":\"user_master.ORGANIZATION3_CD\",\"NativeReferenceName\":\"ORGANIZATION3_CD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"USER_NAME\"},\"Name\":\"user_master.USER_NAME\",\"NativeReferenceName\":\"USER_NAME\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"USERID\"},\"Name\":\"user_master.USERID\",\"NativeReferenceName\":\"USERID\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.52,
+          "width": 1076.36,
+          "x": 91.43,
+          "y": 110.13,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

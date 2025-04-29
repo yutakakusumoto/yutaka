@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "共有セマンティックモデル1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "84dea2d5-792f-a8b4-4275-8fafba497a48"
+  }
+}
