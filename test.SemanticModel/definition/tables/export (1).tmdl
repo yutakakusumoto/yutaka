@@ -1,0 +1,38 @@
+table 'export (1)'
+	lineageTag: 339f1981-3c58-4b05-90d8-e5f282eeee7c
+
+	column Column1
+		dataType: string
+		lineageTag: 8f02c7a7-c8ad-4b25-a712-80e7824db4ad
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 4fd16dca-4847-48de-8f5d-b9f0d39f0775
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 2df3ac83-d54a-427f-ad87-67320b277c64
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'export (1)' = m
+		mode: import
+		source =
+				let
+				    ソース = Csv.Document(File.Contents("C:\Users\yut-kusumoto\OneDrive - 日本電気株式会社\デスクトップ\databricks\export (1).csv"),[Delimiter=",", Columns=3, Encoding=932, QuoteStyle=QuoteStyle.None]),
+				    変更された型 = Table.TransformColumnTypes(ソース,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}})
+				in
+				    変更された型
+
+	annotation PBI_ResultType = Table
+
