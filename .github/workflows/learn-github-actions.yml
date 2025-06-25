@@ -1,5 +1,5 @@
 name: learn-github-actions
-on: [push]
+on: workflow_dispatch:  # 手動実行 or 必要なら push に変更
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
