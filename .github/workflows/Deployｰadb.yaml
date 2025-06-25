@@ -29,7 +29,8 @@ jobs:
           DATABRICKS_TOKEN: dapie3cc470d4209cce94bfbbda757f85757
           DATABRICKS_BUNDLE_ENV: prod
 
-      - name: Push same content to stg branch
+      - name: Push to stg branch (with hardcoded token)
         run: |
-          git checkout -B stg       # stgブランチを作成または切り替え
+          git checkout -B stg
+          git remote set-url origin https://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@github.com/yutakakusumoto/yutaka.git
           git push origin stg --force
