@@ -1,7 +1,7 @@
 name: Deploy from main to prd Databricks
 
 on:
-  workflow_dispatch:  # 手動実行 or 必要なら push に変更
+  workflow_dispatch:
 
 jobs:
   deploy-prd:
@@ -12,7 +12,12 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
         with:
-          ref: main  # ← 明示的にmainブランチを取得
+          ref: main
+
+      - name: Setup Git user for push
+        run: |
+          git config --global user.name "yutakakusumoto"
+          git config --global user.email "kusumoto0106@yahoo.co.jp"
 
       - name: Setup Databricks CLI
         uses: databricks/setup-cli@main
@@ -22,4 +27,9 @@ jobs:
         working-directory: ./bundle
         env:
           DATABRICKS_TOKEN: dapie3cc470d4209cce94bfbbda757f85757
-          DATABRICKS_BUNDLE_ENV: prod  # ← databricks.yml 内の targets.prod を使う
+          DATABRICKS_BUNDLE_ENV: prod
+
+      - name: Push same content to stg branch
+        run: |
+          git checkout -B stg       # stgブランチを作成または切り替え
+          git push origin stg --force
