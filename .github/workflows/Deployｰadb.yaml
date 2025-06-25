@@ -21,5 +21,5 @@ jobs:
         run: databricks bundle deploy
         working-directory: ./bundle
         env:
-          DATABRICKS_TOKEN: ${{ secrets.PRD_DATABRICKS_TOKEN }}
+          DATABRICKS_TOKEN: dapie3cc470d4209cce94bfbbda757f85757
           DATABRICKS_BUNDLE_ENV: prod  # ← databricks.yml 内の targets.prod を使う
