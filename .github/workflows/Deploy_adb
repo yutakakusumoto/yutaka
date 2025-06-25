@@ -1,0 +1,24 @@
+name: Deploy from main to prd Databricks
+
+on:
+  workflow_dispatch:  # 手動実行 or 必要なら push に変更
+
+jobs:
+  deploy-prd:
+    name: Checkout main and deploy to prod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main  # ← 明示的にmainブランチを取得
+
+      - name: Setup Databricks CLI
+        uses: databricks/setup-cli@main
+
+      - name: Deploy to prd environment via asset bundle
+        run: databricks bundle deploy
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.PRD_DATABRICKS_TOKEN }}
+          DATABRICKS_BUNDLE_ENV: prod  # ← databricks.yml 内の targets.prod を使う
