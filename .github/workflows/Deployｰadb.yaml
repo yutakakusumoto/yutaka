@@ -31,6 +31,7 @@ jobs:
 
       - name: Push to stg branch (with hardcoded token)
         run: |
-          git checkout -B stg
+          git fetch origin
+          git checkout -B stg origin/main
           git remote set-url origin https://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@github.com/yutakakusumoto/yutaka.git
           git push origin stg --force
