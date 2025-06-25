@@ -19,6 +19,7 @@ jobs:
 
       - name: Deploy to prd environment via asset bundle
         run: databricks bundle deploy
+        working-directory: ./bundle
         env:
           DATABRICKS_TOKEN: ${{ secrets.PRD_DATABRICKS_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod  # ← databricks.yml 内の targets.prod を使う
